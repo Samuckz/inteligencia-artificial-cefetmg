@@ -2,6 +2,8 @@ import random
 import matplotlib.pyplot as plt
 from itertools import product
 
+from datetime import datetime
+
 def knapsack_genetic(weights, values, capacity, pop_size=50, generations=200, mutation_rate=0.05):
     n = len(weights)
     population = [[random.randint(0, 1) for _ in range(n)] for _ in range(pop_size)]
@@ -62,6 +64,11 @@ def knapsack_genetic(weights, values, capacity, pop_size=50, generations=200, mu
 
     # Melhor indivíduo final
     best_value = fitness(best_individual)
+    
+    
+    final_time = datetime.now()
+    
+    print('execution time: ', final_time - initial_time)
 
     # --- Gráfico de convergência ---
     plt.figure(figsize=(9, 6))
@@ -79,12 +86,13 @@ def knapsack_genetic(weights, values, capacity, pop_size=50, generations=200, mu
     return best_value, best_individual
 
 
-# Exemplo de uso
-weights = [2, 3, 4, 5, 9, 7, 6]
-values = [3, 4, 5, 8, 10, 6, 7]
-capacity = 15
+weights = [8, 14, 11, 6, 19, 9, 12, 16, 5, 18, 7, 10, 15, 13, 17, 20, 4, 9, 11, 8, 7, 14, 10, 6, 5]
+values  = [16, 30, 22, 15, 37, 19, 25, 33, 10, 36, 17, 21, 32, 26, 35, 40, 9, 18, 24, 15, 14, 29, 20, 13, 11]
+capacity = 120
 
 print("\nRodando algoritmo genético...")
+initial_time = datetime.now()
+print('initial time: ', initial_time)
 best_ga_value, best_ga_solution = knapsack_genetic(weights, values, capacity)
 print(f"\nMelhor valor (genético): {best_ga_value}")
 print("Solução encontrada:", best_ga_solution)

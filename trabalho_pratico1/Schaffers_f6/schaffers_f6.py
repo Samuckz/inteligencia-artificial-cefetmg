@@ -5,7 +5,7 @@ import os
 
 # --- Parâmetros do Algoritmo Genético ---
 POP_SIZE = 50
-NUM_GENERATIONS = 100
+NUM_GENERATIONS = 25
 CROSSOVER_RATE = 0.8
 MUTATION_RATE = 0.1
 BOUNDS = [-100, 100]
@@ -124,9 +124,21 @@ plt.tight_layout()
 plt.show()
 
 # --- Geração do Vídeo ---
-with imageio.get_writer('evolucao_schaffer.mp4', fps=10) as writer:
+with imageio.get_writer('evolucao_schaffer.mp4', fps=2.5) as writer:
     for filename in frames:
         image = imageio.imread(filename)
         writer.append_data(image)
 
 print("✅ Vídeo gerado: evolucao_schaffer.mp4")
+
+# --- Encontra o melhor indivíduo global ---
+# Após a última geração
+final_fitness = evaluate_population(pop)
+best_index = np.argmax(final_fitness)
+best_individual = pop[best_index]
+best_fitness = final_fitness[best_index]
+
+print("\n=== RESULTADO FINAL ===")
+print(f"Melhor fitness: {best_fitness:.6f}")
+print(f"x1 = {best_individual[0]:.6f}")
+print(f"x2 = {best_individual[1]:.6f}")
