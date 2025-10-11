@@ -1,0 +1,8 @@
+Rodando força bruta...
+Melhor valor (força bruta): 20
+Combinação ótima: (0, 0, 1, 1, 0, 0, 1)
+
+
+Rodando algoritmo genético...
+Melhor valor (genético): 20
+Solução encontrada: [1, 1, 1, 1, 0, 0, 0]
