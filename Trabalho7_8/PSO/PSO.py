@@ -175,7 +175,7 @@ anim = animation.FuncAnimation(
     blit=True
 )
 
-anim.save("pso_rastrigin.gif", writer=PillowWriter(fps=10))
+anim.save("pso_rastrigin.gif", writer=PillowWriter(fps=5))
 plt.close()
 
 print("\nGIF salvo como pso_rastrigin.gif")
