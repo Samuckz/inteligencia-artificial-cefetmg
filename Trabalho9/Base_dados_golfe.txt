@@ -1,0 +1,16 @@
+[
+    ['Chuvoso', 'Quente', 'Alta', 'Fraco', 'Nao'],
+    ['Chuvoso', 'Quente', 'Alta', 'Forte', 'Nao'],
+    ['Nublado', 'Quente', 'Alta', 'Fraco', 'Sim'],
+    ['Ensolarado', 'Ameno', 'Alta', 'Fraco', 'Sim'],
+    ['Ensolarado', 'Frio', 'Normal', 'Fraco', 'Sim'],
+    ['Ensolarado', 'Frio', 'Normal', 'Forte', 'Nao'],
+    ['Nublado', 'Frio', 'Normal', 'Forte', 'Sim'],
+    ['Chuvoso', 'Ameno', 'Alta', 'Fraco', 'Nao'],
+    ['Chuvoso', 'Frio', 'Normal', 'Fraco', 'Sim'], 
+    ['Ensolarado', 'Ameno', 'Normal', 'Fraco', 'Sim'],
+    ['Chuvoso', 'Ameno', 'Normal', 'Forte', 'Sim'],
+    ['Nublado', 'Ameno', 'Alta', 'Forte', 'Sim'],
+    ['Nublado', 'Quente', 'Normal', 'Fraco', 'Sim'],
+    ['Ensolarado', 'Ameno', 'Alta', 'Forte', 'Nao']
+]
