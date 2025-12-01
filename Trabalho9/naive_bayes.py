@@ -101,23 +101,25 @@ class NaiveBayesGolf:
 
 
 # ==================================
-# EXEMPLO DE USO
+# TESTE COM ENTRADAS MÚLTIPLAS
 # ==================================
 
 modelo = NaiveBayesGolf()
 modelo.treinar("Base_dados_golfe.txt")
 
-entrada = {
-    "Tempo": "Ensolarado",
-    "Temperatura": "Ameno",
-    "Umidade": "Alta",
-    "Vento": "Fraco"
-}
+entradas_teste = [
+    {"Tempo": "Ensolarado", "Temperatura": "Ameno", "Umidade": "Alta", "Vento": "Fraco"},
+    {"Tempo": "Ensolarado", "Temperatura": "Frio", "Umidade": "Alta", "Vento": "Fraco"},
+    {"Tempo": "Chuvoso",   "Temperatura": "Frio", "Umidade": "Normal", "Vento": "Fraco"},
+    {"Tempo": "Nublado",   "Temperatura": "Quente", "Umidade": "Alta", "Vento": "Fraco"},
+    {"Tempo": "Chuvoso",   "Temperatura": "Ameno", "Umidade": "Alta", "Vento": "Forte"},
+    {"Tempo": "Ensolarado","Temperatura": "Frio", "Umidade": "Normal","Vento": "Forte"},
+]
 
-classe, probs = modelo.prever(entrada)
-
-print("Entrada:", entrada)
-print("Classe prevista:", classe)
-print("Probabilidades:")
-for c, p in probs.items():
-    print(f"P({c}) = {p:.4f}")
+for entrada in entradas_teste:
+    classe, probs = modelo.prever(entrada)
+    print("\nEntrada:", entrada)
+    print("Classe prevista:", classe)
+    print("Probabilidades:")
+    for c, p in probs.items():
+        print(f"  P({c}) = {p:.4f}")
