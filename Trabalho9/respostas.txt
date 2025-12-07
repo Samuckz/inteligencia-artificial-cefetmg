@@ -1,0 +1,35 @@
+Entrada: {'Tempo': 'Ensolarado', 'Temperatura': 'Ameno', 'Umidade': 'Alta', 'Vento': 'Fraco'}
+Classe prevista: Sim
+Probabilidades:
+  P(Sim) = 0.5404
+  P(Nao) = 0.4596
+
+Entrada: {'Tempo': 'Ensolarado', 'Temperatura': 'Frio', 'Umidade': 'Alta', 'Vento': 'Fraco'}
+Classe prevista: Sim
+Probabilidades:
+  P(Sim) = 0.5852
+  P(Nao) = 0.4148
+
+Entrada: {'Tempo': 'Chuvoso', 'Temperatura': 'Frio', 'Umidade': 'Normal', 'Vento': 'Fraco'}
+Classe prevista: Sim
+Probabilidades:
+  P(Sim) = 0.7764
+  P(Nao) = 0.2236
+
+Entrada: {'Tempo': 'Nublado', 'Temperatura': 'Quente', 'Umidade': 'Alta', 'Vento': 'Fraco'}
+Classe prevista: Sim
+Probabilidades:
+  P(Sim) = 0.7257
+  P(Nao) = 0.2743
+
+Entrada: {'Tempo': 'Chuvoso', 'Temperatura': 'Ameno', 'Umidade': 'Alta', 'Vento': 'Forte'}
+Classe prevista: Nao
+Probabilidades:
+  P(Sim) = 0.2209
+  P(Nao) = 0.7791
+
+Entrada: {'Tempo': 'Ensolarado', 'Temperatura': 'Frio', 'Umidade': 'Normal', 'Vento': 'Forte'}
+Classe prevista: Sim
+Probabilidades:
+  P(Sim) = 0.7257
+  P(Nao) = 0.2743
