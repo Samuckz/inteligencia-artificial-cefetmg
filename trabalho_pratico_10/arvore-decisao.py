@@ -8,6 +8,8 @@ from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from sklearn.tree import plot_tree
+
 # Configuração para reproducibilidade
 np.random.seed(42)
 
@@ -56,7 +58,7 @@ for i in range(n_executions):
     )
     
     # Treinar Decision Tree
-    dt_classifier = DecisionTreeClassifier(random_state=i)
+    dt_classifier = DecisionTreeClassifier(max_depth=5)
     dt_classifier.fit(X_train, y_train)
     
     # Fazer predições
@@ -235,6 +237,13 @@ print(f"  • Status: {'✓ ALCANÇADO' if abs(rf_mean - 0.87) <= 0.02 else '✗
 
 print(f"\nMelhor Profundidade (Random Forest): {max_depths[np.argmax(depth_accuracies_mean)]}")
 print(f"Acurácia na melhor profundidade: {max(depth_accuracies_mean):.4f}")
+
+# Após treinar uma árvore
+plt.figure(figsize=(20,10))
+plot_tree(dt_classifier, feature_names=X.columns, 
+          class_names=['Sem Doença', 'Com Doença'], 
+          filled=True, fontsize=10)
+plt.show()
 
 print("\n" + "=" * 60)
 print("ANÁLISE CONCLUÍDA COM SUCESSO!")
